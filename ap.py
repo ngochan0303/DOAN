@@ -187,11 +187,11 @@ st.set_page_config(
 
 @st.cache_resource
 def load_model():
-    return joblib.load("npar2/rfc.joblib")
+    return joblib.load("rfc.joblib")
 
 @st.cache_data
 def load_data():
-    return joblib.load("npar2/X_train.joblib")
+    return joblib.load("X_train.joblib")
 
 rfc = load_model()
 X_train = load_data()
@@ -330,5 +330,6 @@ if st.button("🚀 **Run Prediction**"):
         fig2 = plt.figure()
         shap.plots.waterfall(shap_water, show=False)
         st.pyplot(fig2)
+
 
 
